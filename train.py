@@ -6,13 +6,16 @@ from tensorflow import keras
 
 mnist = keras.datasets.mnist
 
+# Split train and test data
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
-print(x_train.shape, y_train.shape)
+print("Train Data Shape: ",x_train.shape, y_train.shape)
+print("Test Data Shape: ",x_test.shape, y_test.shape)
+print("--------------------------------------------------------------------------")
 
 # normalize: 0,255 -> 0,1
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
-# model
+# sequential model
 model = keras.models.Sequential([
     keras.layers.Flatten(input_shape=(28,28)),
     keras.layers.Dense(128, activation='relu'),
@@ -29,16 +32,17 @@ model.compile(loss=loss, optimizer=optim, metrics=metrics)
 
 # training
 batch_size = 64
-epochs = 5
+epochs = 7
 
-model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, shuffle=True, verbose=2)
+model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, shuffle=True)
+print("Model Training Complete! Now evaluating...")
+print("--------------------------------------------------------------------------")
+model.evaluate(x_test, y_test, batch_size=batch_size)
 
-model.save("nn.keras")  # .h5 = HDF5
+# save model
+print("--------------------------------------------------------------------------")
+model.save("nn.keras") 
+print("Model Saved!")
 
-# evaluate
-print("Evaluate both models:")
-model.evaluate(x_test, y_test, batch_size=batch_size, verbose=2)
 
-new_model = keras.models.load_model("nn.keras")
-new_model.evaluate(x_test, y_test, batch_size=batch_size, verbose=2)
 
