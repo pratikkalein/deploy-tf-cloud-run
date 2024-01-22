@@ -11,9 +11,9 @@
 ## About The Project
 
 ![Screenshot](streamlit.png)
-This project demonstrates how to train a ML model with TensorFlow and depoly the model to Google Cloud Run with the help of Cloud Build and Docker.
+This project demonstrates how to train a ML model with TensorFlow and deploy the model to Google Cloud Run with the help of Cloud Build and Docker.
 
-## Buit With
+## Built With
 
 ![Python](https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask)
@@ -36,7 +36,7 @@ Set up the project locally.
    ```sh
    git clone https://github.com/pratikkalein/deploy-tf-cloud-run.git
    ```
-2. Create and activate virtual enviorment
+2. Create and activate virtual environment
 
    ```sh
    python3 -m venv venv
@@ -113,3 +113,4 @@ Twitter - [@pratikkalein](https://twitter.com/pratikkalein) LinkedIn- [/in/prati
 ppvkale@gmail.com
 
 Project Link: [https://github.com/pratikkalein/deploy-tf-cloud-run](https://github.com/pratikkalein/deploy-tf-cloud-run)
+Demo Link : [http://pratik.tech/tf-run-demo](http://pratik.tech/tf-run-demo)
