@@ -11,7 +11,7 @@ import io
 model = keras.models.load_model("nn.keras")
 
 # load the image
-with open('5.jpg', 'rb') as file:
+with open('test-images/5.jpg', 'rb') as file:
     image_bytes = file.read()
     pillow_img = Image.open(io.BytesIO(image_bytes)).convert('L')
 

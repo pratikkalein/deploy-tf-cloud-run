@@ -11,6 +11,7 @@ if img is not None:
     st.write('Uploaded Image:')
     st.image(img, width=300)
     files = {'file': img.getvalue()}
-    resp = requests.post("http://127.0.0.1:5000", files=files)
+    # Paste the URL of your deployed model here
+    resp = requests.post("paste-url-here", files=files)
     prediction = (resp.json().get('prediction'))
     st.header(f'Prediction: {prediction}')

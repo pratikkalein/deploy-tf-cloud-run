@@ -6,4 +6,3 @@ README.md
 __pycache__
 .pytest_cache
 .idea
-test.py
